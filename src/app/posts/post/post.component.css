@@ -1,0 +1,23 @@
+.post {
+  background-color: #fff;
+}
+
+.post_content h6 {
+  font-size: 36px;
+  font-family: "Roboto";
+  line-height: 1.167;
+  font-weight: 300;
+}
+
+.post_content h6 a {
+  color: #515365;
+}
+
+.post_content h6 a:hover {
+  color: #ff5e3a;
+}
+
+p {
+  color: #888da8;
+  line-height: 1.714;
+}
