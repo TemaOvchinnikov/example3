@@ -1,7 +1,19 @@
 <div class="post bg mb-26">
-  <div class="p-0_25 pb-22">
-    <div class="post_content">
-      <h6><a href="">My Perfect Vacations in South America and Europe</a></h6>
+  <div class="post_content">
+    <div [ngSwitch]="user._count.images">
+      <div *ngSwitchCase="1">
+        <img src="{{ user.images[0]['imagePuth'] }}" alt="" />
+      </div>
+      <div *ngSwitchCase="2" class="row">
+        <img class="col-6" src="{{ user.images[0]['imagePuth'] }}" alt="" />
+        <img class="col-6" src="{{ user.images[1]['imagePuth'] }}" alt="" />
+      </div>
+      <div *ngSwitchDefault></div>
+    </div>
+    <div class="p-0_25 pb-22 mt-34">
+      <h6>
+        <a href="/id/${user.id}">{{ user.title }}</a>
+      </h6>
       <p>
         Lorem ipsum dolor sit amet, consectadipisicing elit, sed do eiusmod por
         incidid ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -19,6 +31,8 @@
         odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
         voluptatem sequi nesciunt...
       </p>
+
+      <app-button></app-button>
     </div>
   </div>
 </div>
