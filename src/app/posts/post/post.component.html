@@ -1,20 +1,46 @@
 <div class="post bg mb-26">
   <div class="post_content">
-    <div [ngSwitch]="user._count.images">
+    <div [ngSwitch]="post._count.images">
+      <div *ngSwitchCase="0"></div>
       <div *ngSwitchCase="1">
-        <img src="{{ user.images[0]['imagePuth'] }}" alt="" />
+        <img src="{{ post.images[0]['imagePuth'] }}" alt="" />
       </div>
       <div *ngSwitchCase="2" class="row">
-        <img class="col-6" src="{{ user.images[0]['imagePuth'] }}" alt="" />
-        <img class="col-6" src="{{ user.images[1]['imagePuth'] }}" alt="" />
+        <img class="col-6" src="{{ post.images[0]['imagePuth'] }}" alt="" />
+        <img class="col-6" src="{{ post.images[1]['imagePuth'] }}" alt="" />
       </div>
-      <div *ngSwitchDefault></div>
+      <div *ngSwitchCase="3" class="row">
+        <img class="col-6" src="{{ post.images[0]['imagePuth'] }}" alt="" />
+        <img class="col-6" src="{{ post.images[1]['imagePuth'] }}" alt="" />
+        <img class="col-12" src="{{ post.images[2]['imagePuth'] }}" alt="" />
+      </div>
+      <div *ngSwitchCase="4" class="row">
+        <img class="col-6" src="{{ post.images[0]['imagePuth'] }}" alt="" />
+        <img class="col-6" src="{{ post.images[1]['imagePuth'] }}" alt="" />
+        <img class="col-6" src="{{ post.images[2]['imagePuth'] }}" alt="" />
+        <img class="col-6" src="{{ post.images[3]['imagePuth'] }}" alt="" />
+      </div>
+      <div *ngSwitchCase="5" class="row">
+        <img class="col-6" src="{{ post.images[0]['imagePuth'] }}" alt="" />
+        <img class="col-6" src="{{ post.images[1]['imagePuth'] }}" alt="" />
+        <img class="col-4" src="{{ post.images[2]['imagePuth'] }}" alt="" />
+        <img class="col-4" src="{{ post.images[3]['imagePuth'] }}" alt="" />
+        <img class="col-4" src="{{ post.images[3]['imagePuth'] }}" alt="" />
+      </div>
+      <div *ngSwitchDefault class="row">
+        <img class="col-6" src="{{ post.images[0]['imagePuth'] }}" alt="" />
+        <img class="col-6" src="{{ post.images[1]['imagePuth'] }}" alt="" />
+        <img class="col-4" src="{{ post.images[2]['imagePuth'] }}" alt="" />
+        <img class="col-4" src="{{ post.images[3]['imagePuth'] }}" alt="" />
+        <div class="col-4">+ {{ post._count.images - 5 }}</div>
+      </div>
     </div>
     <div class="p-0_25 pb-22 mt-34">
       <h6>
-        <a href="/id/{{user.id}}">{{ user.title }}</a>
+        <a href="/id/{{ post.id }}">{{ post.title }}</a>
       </h6>
-      <p>
+      <p>{{ post.content }}</p>
+      <!--<p>
         Lorem ipsum dolor sit amet, consectadipisicing elit, sed do eiusmod por
         incidid ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
         nostrud lorem exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -30,9 +56,9 @@
         explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
         odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
         voluptatem sequi nesciunt...
-      </p>
+      </p>-->
 
-      <app-button></app-button>
+      <app-button [post]="post"></app-button>
     </div>
   </div>
 </div>
